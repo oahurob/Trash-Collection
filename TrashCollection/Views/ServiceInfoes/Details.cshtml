@@ -1,4 +1,4 @@
-﻿@model TrashCollection.Models.CustomerViewModel
+﻿@model TrashCollection.Models.ServiceInfo
 
 @{
     ViewData["Title"] = "Details";
@@ -12,44 +12,44 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ServiceInfo.Balance)
+            @Html.DisplayNameFor(model => model.Balance)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ServiceInfo.Balance)
+            @Html.DisplayFor(model => model.Balance)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ServiceInfo.StartDate)
+            @Html.DisplayNameFor(model => model.StartDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ServiceInfo.StartDate)
+            @Html.DisplayFor(model => model.StartDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ServiceInfo.EndDate)
+            @Html.DisplayNameFor(model => model.EndDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ServiceInfo.EndDate)
+            @Html.DisplayFor(model => model.EndDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ServiceInfo.PickUpDay)
+            @Html.DisplayNameFor(model => model.PickUpDay)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ServiceInfo.PickUpDay)
+            @Html.DisplayFor(model => model.PickUpDay)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ServiceInfo.OneTimePickUp)
+            @Html.DisplayNameFor(model => model.OneTimePickUp)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ServiceInfo.OneTimePickUp)
+            @Html.DisplayFor(model => model.OneTimePickUp)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ServiceInfo.IsSuspended)
+            @Html.DisplayNameFor(model => model.IsSuspended)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ServiceInfo.IsSuspended)
+            @Html.DisplayFor(model => model.IsSuspended)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Customer.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
