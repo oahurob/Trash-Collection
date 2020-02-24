@@ -19,6 +19,7 @@ namespace TrashCollection.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<ServiceInfo> ServiceInfos { get; set; }
+        //public DbSet<TrashCollection.Models.EmployeeViewModel> EmployeeViewModel { get; set; }
         //protected override void OnModelCreating(ModelBuilder builder)
         //{
         //    base.OnModelCreating(builder);
