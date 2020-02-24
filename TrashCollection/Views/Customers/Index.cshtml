@@ -1,0 +1,103 @@
+﻿@model IEnumerable<TrashCollection.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.Street)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceInfo.Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceInfo.PickUpDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceInfo.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceInfo.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceInfo.OneTimePickUp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceInfo.IsSuspended)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.PickUpDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.OneTimePickUp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.IsSuspended)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
