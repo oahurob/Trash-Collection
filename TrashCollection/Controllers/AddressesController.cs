@@ -24,7 +24,7 @@ namespace TrashCollection.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-             var customer = _context.Customers.FirstOrDefault(a => a.UserId == userId);
+            var customer = _context.Customers.FirstOrDefault(a => a.UserId == userId);
             return View(await _context.Addresses.Where(a => a.Id == customer.AddressId).ToListAsync());
         }
 

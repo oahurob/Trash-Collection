@@ -33,10 +33,14 @@ namespace TrashCollection.Controllers
         }
 
         // GET: Customers/Details/5
-        public IActionResult Details()
+        public IActionResult Details(int? id)
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var customer = _context.Customers.FirstOrDefault(a => a.UserId == userId);
+            if(customer == null)
+            {
+                customer = _context.Customers.FirstOrDefault(c => c.Id == id);
+            }
             if (userId == null)
             {
                 return RedirectToAction("./Identity/Account/Login");
