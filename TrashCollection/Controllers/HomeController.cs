@@ -30,6 +30,10 @@ namespace TrashCollection.Controllers
             {
                 return RedirectToAction("Index", "Customers");
             }
+            if (User.IsInRole("Employee"))
+            {
+                return RedirectToAction("Index", "Employees");
+            }
             return RedirectToAction("Index", "Customers");
         }
 
