@@ -39,12 +39,12 @@ namespace TrashCollection.Controllers
             var customer = _context.Customers.FirstOrDefault(a => a.UserId == userId);
             if (userId == null)
             {
-                return RedirectToAction("Create", "Customer");
+                return RedirectToAction("./Identity/Account/Login");
             }
 
             if (customer == null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Create", "Customer");
             }
 
             return View(customer);
@@ -75,6 +75,7 @@ namespace TrashCollection.Controllers
             }
             ViewData["AddressId"] = new SelectList(_context.Set<Address>(), "Id", "Id", customer.AddressId);
             ViewData["IdentityUserId"] = new SelectList(_context.Users, "Id", "Id", customer.UserId);
+            ViewData["ServiceInfoId"] = new SelectList(_context.ServiceInfos, "Id", "Id", customer.ServiceInfoId);
 
             return View(customer);
         }
