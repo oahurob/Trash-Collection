@@ -20,6 +20,7 @@ namespace TrashCollection.Models
         [Display(Name = "One Time Pick Up")]
         public DateTime OneTimePickUp { get; set; }
         public bool IsSuspended { get; set; }
+        public bool IsPickedUp { get; set; }
 
     }
 }
