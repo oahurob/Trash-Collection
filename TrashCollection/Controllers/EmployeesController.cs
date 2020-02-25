@@ -21,7 +21,7 @@ namespace TrashCollection.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var employee = _context.Employees.Include(e => e.Address).Where(e => e.IdentityUserId == userId).FirstOrDefault();
@@ -54,6 +54,13 @@ namespace TrashCollection.Controllers
             return View(employee);
         }
 
+        // GET: Customers/Details/5
+        //public IActionResult Confirm(int? id)
+        //{
+        //    var customer = _context.Customers.FirstOrDefault(c => c.Id == id);
+        //    customer.ServiceInfo.Balance = customer.ServiceInfo.Balance + 25;
+        //    return RedirectToAction("Index", "Employees");
+        //}
         // GET: Employees/Create
         public IActionResult Create()
         {

@@ -44,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.IdentityUser.Id)
             </td>
             <td>
-                <a asp-controller="Customers" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Picked Up</a>
+                <a asp-action="Confirm" asp-route-id="@item.Id" class="btn btn-success">Picked Up</a>
             </td>
         </tr>
 }
