@@ -23,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Address.Zip)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdentityUser)
+                Street
             </th>
             <th></th>
         </tr>
@@ -41,7 +41,7 @@
                 @Html.DisplayFor(modelItem => item.Address.Zip)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdentityUser.Id)
+                @Html.DisplayFor(modelItem => item.Address.Street)
             </td>
             <td>
                 <a asp-action="Confirm" asp-route-id="@item.Id" class="btn btn-success">Picked Up</a>
