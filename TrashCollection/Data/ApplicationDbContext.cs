@@ -19,39 +19,28 @@ namespace TrashCollection.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<ServiceInfo> ServiceInfos { get; set; }
-        //public DbSet<TrashCollection.Models.EmployeeViewModel> EmployeeViewModel { get; set; }
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
 
-        //    builder.Entity<IdentityRole>()
-        //        .HasData(
-        //        new IdentityRole
-        //        {
-        //            Name = "Admin",
-        //            NormalizedName = "ADMIN"
-        //        }
-        //        );
-        //    base.OnModelCreating(builder);
-
-        //    builder.Entity<IdentityRole>()
-        //        .HasData(
-        //        new IdentityRole
-        //        {
-        //            Name = "Customer",
-        //            NormalizedName = "CUSTOMER"
-        //        }
-        //        );
-        //    base.OnModelCreating(builder);
-
-        //    builder.Entity<IdentityRole>()
-        //        .HasData(
-        //        new IdentityRole
-        //        {
-        //            Name = "Employee",
-        //            NormalizedName = "EMPLOYEE"
-        //        }
-        //        );
-        //}
+            builder.Entity<IdentityRole>()
+                .HasData(
+                new IdentityRole
+                {
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
+                },
+                new IdentityRole
+                {
+                    Name = "Customer",
+                    NormalizedName = "CUSTOMER"
+                },
+                new IdentityRole
+                {
+                    Name = "Employee",
+                    NormalizedName = "EMPLOYEE"
+                }
+                );
+        }
     }
 }

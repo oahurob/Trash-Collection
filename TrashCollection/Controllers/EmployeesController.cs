@@ -55,12 +55,15 @@ namespace TrashCollection.Controllers
         }
 
         // GET: Customers/Details/5
-        //public IActionResult Confirm(int? id)
-        //{
-        //    var customer = _context.Customers.FirstOrDefault(c => c.Id == id);
-        //    customer.ServiceInfo.Balance = customer.ServiceInfo.Balance + 25;
-        //    return RedirectToAction("Index", "Employees");
-        //}
+        public IActionResult Confirm(int? id)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.Id == id);
+            var service = _context.ServiceInfos.FirstOrDefault(s => s.Id == customer.ServiceInfoId);
+            service.Balance += 25;
+            service.IsPickedUp = true;
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Employees");
+        }
         // GET: Employees/Create
         public IActionResult Create()
         {
